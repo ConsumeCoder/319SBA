@@ -1,1 +1,1 @@
-A bad advice api server
+Shared Calendar Project
