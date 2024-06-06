@@ -27,7 +27,14 @@ for (let month = 0; month < arr.length; month++) {
         if (startCount==true) { arr[month][x][y] = counter;
                     counter++;
             
-        }
+        } else {
+                    arr[month][x][y] = "";
+                }
+
+                if (counter > monthLong) {
+                    arr[month][x][y] = "";
+
+                }
     }
     }
     return arr;

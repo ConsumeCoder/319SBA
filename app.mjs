@@ -11,4 +11,27 @@ app.listen(PORT, () => {
   console.log("app is listening on port", PORT);
 });
 
-app.set("view engine", "ejs");
+app.set("view-engine", "ejs");
+const path = require("path");
+__dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "views")));
+
+app.get("/", (req, res) => {
+  const year = req.query.year || 2024;
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  res.render("index.ejs", { calendar: calendar(year), months, year });
+});
