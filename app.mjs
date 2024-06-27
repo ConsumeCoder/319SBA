@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "views")));
 
-app.use(users: usersRouter)
+app.use("users:", usersRouter);
 
 app.get("/", (req, res) => {
   const year = req.query.year || 2024;
