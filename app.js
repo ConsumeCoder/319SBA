@@ -1,19 +1,19 @@
-const express = import("express");
-const ejs = import("ejs");
+const express = require("express");
+const ejs = require("ejs");
 const app = express();
 const PORT = 3000;
-const usersRouter = import("./routes/users.js");
-const postsRouter = import("./routes/posts.js");
-const notesRouter = import("./routes/notes.js");
-const error = import("./utilities/error.js");
-const path = import("path");
+const usersRouter = require("./routes/users.js");
+const postsRouter = require("./routes/posts.js");
+const notesRouter = require("./routes/notes.js");
+const error = require("./utilities/error.js");
+const path = require("path");
 
 app.set("view engine", "ejs");
 
 __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "views")));
 
-app.use("users/:id", usersRouter);
+app.use("/users", usersRouter);
 
 app.get("/", (req, res) => {
   const year = req.query.year || 2024;
