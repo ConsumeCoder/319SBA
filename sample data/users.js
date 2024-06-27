@@ -17,6 +17,13 @@ const users = [
     username: "Droneguy",
     email: "DroneGuy@fly.com",
   },
+
+  {
+    id: 4,
+    name: "Arabella",
+    username: "Modan Luva",
+    email: "lill@dy@passengerside.com",
+  },
 ];
 
 module.exports = users;
